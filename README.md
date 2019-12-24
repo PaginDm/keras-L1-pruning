@@ -1,6 +1,9 @@
 # keras-L1-pruning
 
-Prune simply model with your custom loss and optimizer. Prune only convs
+Prune simply model with your custom loss and optimizer. Prune only convs. 
+Implement this scheme:
+
+![picture](https://raw.githubusercontent.com/PaginDm/keras-L1-pruning/master/images/pruning.png)
 
 ## Edit the configuration file
 ```python
