@@ -6,9 +6,10 @@ Implement this scheme:
 ![picture](https://raw.githubusercontent.com/PaginDm/keras-L1-pruning/master/images/pruning.png)
 
 ## Todo list:
-- [x] Convs L1-pruning by percent
-- [x] Using with custom optimizers and losses
+- [x] Convs L1-pruning by percent (https://openreview.net/pdf?id=rJqFGTslg)
+- [x] Using with custom optimizers and losses 
 - [ ] Limit the pruning part by relative values
+- [ ] Pruning flatten layer
 
 ## Requirements
 Tested with:
