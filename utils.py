@@ -2,7 +2,7 @@ from kerassurgeon import Surgeon
 import numpy as np
 from matplotlib import pyplot as plt
 
-def prune_model(model, pruning_percent_step):
+def prune_model(model, pruning_percent_step, pruning_standart_deviation_part):
     idxs = []
     count = len(model.layers)
     for layer_idx in range(count):
@@ -26,15 +26,23 @@ def prune_model(model, pruning_percent_step):
         # print(num_filters)
         delete_part_int = (int)(num_filters * pruning_percent_step) + 1
 
+        l1_s = []
         for j in range(num_filters):
-            w_s = np.sum(abs(weight[:,:,:,j]))
+            l1 = np.sum(abs(weight[:,:,:,j]))
             filt = f"{j}"
-            weights_dict[filt] = w_s
+            weights_dict[filt] = l1
+            l1_s.append(l1)
 
         weights_dict_sort = sorted(weights_dict.items(), key = lambda kv: kv[1])
+        mean = np.mean(l1_s)
+        std = np.std(l1_s)
 
+        threshold_l1 = mean - std*pruning_standart_deviation_part
         delete_idxs = []
         for i in range(delete_part_int):
+            if(weights_dict_sort[i][1] > threshold_l1):
+                break
+
             delete_idxs.append((int)(weights_dict_sort[i][0]))
         
         surgeon.add_job(job = "delete_channels", layer=layer, channels=delete_idxs,)
