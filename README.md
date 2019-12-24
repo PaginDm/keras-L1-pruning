@@ -5,6 +5,18 @@ Implement this scheme:
 
 ![picture](https://raw.githubusercontent.com/PaginDm/keras-L1-pruning/master/images/pruning.png)
 
+## Todo list:
+- [x] Convs L1-pruning by percent
+- [x] Using with custom optimizers and losses
+- [] Limit the pruning part by relative values
+
+## Requirements
+Tested with:
+ - keras-surgeon==0.1.3
+ - tensorflow==1.14
+ - keras==2.3.1
+
+
 ## Edit the configuration file
 ```python
 {
