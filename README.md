@@ -31,3 +31,8 @@ pruner = pruning.Pruner("config.json", "categorical_crossentropy", opt)
 
 pruner.prune(train_batch, valid_batch)
 ```
+
+## Result
+The model will be saved at "output_model_path". Besides, process will be saved as png (All values normalized to 1.0):
+
+![picture](https://raw.githubusercontent.com/PaginDm/keras-L1-pruning/master/images/pruning_res.png)
