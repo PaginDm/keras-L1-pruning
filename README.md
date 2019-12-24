@@ -8,7 +8,7 @@ Implement this scheme:
 ## Todo list:
 - [x] Convs L1-pruning by percent (https://openreview.net/pdf?id=rJqFGTslg)
 - [x] Using with custom optimizers and losses 
-- [ ] Limit the pruning part by relative values
+- [x] Limit the pruning part by relative values
 - [ ] Pruning flatten layer
 
 ## Requirements
@@ -26,9 +26,13 @@ Tested with:
     "finetuning_epochs": 10, # the number of epochs for train between pruning steps
     "stop_loss": 0.1, # loss for stopping process
     "pruning_percent_step": 0.05 # part of convs for delete on every pruning step
+    "pruning_standart_deviation_part": 0.2 # shift for limit pruning part
 }
 
 ```
+
+Explaining of params:
+![picture](https://raw.githubusercontent.com/PaginDm/keras-L1-pruning/master/images/config_explain.png)
 
 ## Use like this
 ```python
