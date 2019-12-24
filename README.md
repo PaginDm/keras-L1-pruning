@@ -8,7 +8,7 @@ Implement this scheme:
 ## Todo list:
 - [x] Convs L1-pruning by percent
 - [x] Using with custom optimizers and losses
-- [] Limit the pruning part by relative values
+- [ ] Limit the pruning part by relative values
 
 ## Requirements
 Tested with:
