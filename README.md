@@ -10,6 +10,8 @@ Implement this scheme:
 - [x] Using with custom optimizers and losses 
 - [x] Limit the pruning part by relative values
 - [ ] Pruning flatten layer
+- [ ] Jump to tensorflow>=2.0
+- [ ] Pruning based on masked convs https://arxiv.org/abs/1512.08571
 
 ## Requirements
 Tested with:
